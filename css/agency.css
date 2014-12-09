@@ -13,6 +13,10 @@ body {
     color: #777;
 }
 
+.text-contact {
+    color: #f5f5f6;
+}
+
 .text-primary {
     color: #47A6CC;
 }
@@ -653,14 +657,20 @@ aside.clients img {
 }
 
 section#contact {
-    background-color: #222;
-    background-image: url(../img/map-image.png);
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image: url(../img/contact/cubo4.jpg);
+    text-align: center;
+    color: #fff;
+    background-attachment: scroll;
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
 section#contact .section-heading {
-    color: #fff;
+    color: #f5f5f6;
 }
 
 section#contact .form-group {
