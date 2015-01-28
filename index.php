@@ -37,10 +37,10 @@
 
 <?php
 if(isset($_POST['submit'])){
-    $to = "codoks@gmail.com"; // this is your Email address
+    $to = "email@example.com"; // this is your Email address
     $from = $_POST['email']; // this is the sender's Email address
     $first_name = $_POST['first_name'];
-    $last_name = "Rafagnin";
+    $last_name = $_POST['last_name'];
     $subject = "Form submission";
     $subject2 = "Copy of your form submission";
     $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
@@ -54,6 +54,7 @@ if(isset($_POST['submit'])){
     // You can also use header('Location: thank_you.php'); to redirect to another page.
     }
 ?>
+
 
 <body id="page-top" class="index">
 
@@ -277,32 +278,31 @@ if(isset($_POST['submit'])){
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form method="post" name="sentMessage" id="contactForm" novalidate>
+                    <form action="" method="post">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input name="first_name" type="text" class="form-control" placeholder="Nome *" id="name" required data-validation-required-message="Please enter your name.">
+                                    <input class="form-control" type="text" name="first_name" placeholder="Nome *">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input name="email" type="email" class="form-control" placeholder="Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <input class="form-control" type="text" name="last_name" placeholder="Sobrenome *">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Telefone *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <input class="form-control" type="text" name="email" placeholder="Email *">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <textarea name="message" class="form-control" placeholder="Descreva brevemente qual é o seu objetivo com o projeto, expectativas e/ou necessidades..." id="message" required data-validation-required-message="Please enter a message."></textarea>
-                                    <p class="help-block text-danger"></p>
+                                    <textarea class="form-control" placeholder="Descreva brevemente qual é o seu objetivo com o projeto, expectativas e/ou necessidades..." id="message" required data-validation-required-message="Please enter a message." rows="5" name="message" cols="30"></textarea>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
-                                <button name="submit" type="submit" class="btn btn-xl">Enviar Mensagem</button>
+                                <input class="btn btn-xl" type="submit" name="submit" value="Enviar email">
                             </div>
                         </div>
                     </form>
